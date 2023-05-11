@@ -1,6 +1,25 @@
-import Head from 'next/head';
-import styles from '../styles/Home.module.css';
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
+import Link from "next/link"; //importa o link component
 
+/**
+ * * PARTE 1 criando pagina
+ * 
+ * Em Next.js, uma página(page) é um React Component exportado de um arquivo no pages diretório
+ *
+ * As páginas são associadas a uma rota com base em seu nome de arquivo.
+ *
+ * pages/index.js está associado à / rota.
+ *
+ * * PARTE 2 componente de link
+ * 
+ * Ao criar links entre páginas em sites, você usa a <a> tag HTML.
+ * 
+ * No Next.js, você pode usar o Linkcomponente next/link para vincular as páginas do seu aplicativo. <Link> permite que você faça navegação do lado do cliente e aceita props que lhe dão melhor controle sobre o comportamento de navegação.
+ * @returns
+ */
+
+//Page Home esta associada a root rota, a rota raiz
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -10,8 +29,11 @@ export default function Home() {
       </Head>
 
       <main>
+        {/**
+         * No Next.js, você pode usar o Link componente next/link para vincular as páginas do seu aplicativo. <Link> permite que você faça navegação do lado do cliente e aceita props que lhe dão melhor controle sobre o comportamento de navegação.
+         */}
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Read <Link href="/posts/first-post">this page!</Link>
         </h1>
 
         <p className={styles.description}>
@@ -55,7 +77,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <img src="/vercel.svg" alt="Vercel" className={styles.logo} />
         </a>
       </footer>
@@ -111,5 +133,5 @@ export default function Home() {
         }
       `}</style>
     </div>
-  )
+  );
 }
