@@ -1,0 +1,33 @@
+/**
+ * No Next.js, você pode adicionar arquivos CSS globais importando-os de pages/_app.js. Você não pode importar CSS global em nenhum outro lugar.
+ * 
+ * A razão pela qual o CSS global não pode ser importado fora de pages/_app.jsé que o CSS global afeta todos os elementos da página.
+**/
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}

@@ -1,0 +1,58 @@
+/*
+ - CSS MODULES 
+ - conjunto de classes utilitárias CSS (para estilos de texto) que podem ser reutilizadas em vários componentes.
+ - Você pode reutilizar essas classes utilitárias em todo o seu aplicativo e pode até usar classes utilitárias em seu global.css arquivo. As classes utilitárias referem-se a uma abordagem de escrever seletores CSS em vez de um método (por exemplo, estilos globais, módulos CSS, Sass, etc). Saiba mais sobre CSS de primeiro uso . 
+*/
+
+.heading2Xl {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.05rem;
+  margin: 1rem 0;
+}
+
+.headingXl {
+  font-size: 2rem;
+  line-height: 1.3;
+  font-weight: 800;
+  letter-spacing: -0.05rem;
+  margin: 1rem 0;
+}
+
+.headingLg {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin: 1rem 0;
+}
+
+.headingMd {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.borderCircle {
+  border-radius: 9999px;
+}
+
+.colorInherit {
+  color: inherit;
+}
+
+.padding1px {
+  padding-top: 1px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.listItem {
+  margin: 0 0 1.25rem;
+}
+
+.lightText {
+  color: #666;
+}

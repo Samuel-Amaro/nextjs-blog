@@ -1,10 +1,11 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
-import Link from "next/link"; //importa o link component
+//import Link from "next/link"; //importa o link component
+import Layout, { siteTitle } from "../components/layout";
+import utilStyles from "../styles/utils.module.css";
 
 /**
  * * PARTE 1 criando pagina
- * 
+ *
  * Em Next.js, uma página(page) é um React Component exportado de um arquivo no pages diretório
  *
  * As páginas são associadas a uma rota com base em seu nome de arquivo.
@@ -12,9 +13,9 @@ import Link from "next/link"; //importa o link component
  * pages/index.js está associado à / rota.
  *
  * * PARTE 2 componente de link
- * 
+ *
  * Ao criar links entre páginas em sites, você usa a <a> tag HTML.
- * 
+ *
  * No Next.js, você pode usar o Linkcomponente next/link para vincular as páginas do seu aplicativo. <Link> permite que você faça navegação do lado do cliente e aceita props que lhe dão melhor controle sobre o comportamento de navegação.
  * @returns
  */
@@ -22,16 +23,28 @@ import Link from "next/link"; //importa o link component
 //Page Home esta associada a root rota, a rota raiz
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <Layout home>
+      {/**
+       * metadados de uma página
+       * <Head> é um React Component que está embutido no Next.js. Ele permite que você modifique o <head> de uma página.
+       */}
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>{siteTitle}</title>
       </Head>
-
-      <main>
-        {/**
+      <section className={utilStyles.headingMd}>
+        <p>
+          Hello, I´m Samuel. I´m a Front End Developer. Who loves coding UI, learning new subjects
+          and riding MTB.
+        </p>
+        <p>
+          (This is a sample website - you’ll be building a site like this on{" "}
+          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
+        </p>
+      </section>
+      {/*<main>
+        
          * No Next.js, você pode usar o Link componente next/link para vincular as páginas do seu aplicativo. <Link> permite que você faça navegação do lado do cliente e aceita props que lhe dão melhor controle sobre o comportamento de navegação.
-         */}
+         
         <h1 className={styles.title}>
           Read <Link href="/posts/first-post">this page!</Link>
         </h1>
@@ -132,6 +145,7 @@ export default function Home() {
           box-sizing: border-box;
         }
       `}</style>
-    </div>
+      </Layout>*/}
+    </Layout>
   );
 }

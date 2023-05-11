@@ -1,0 +1,24 @@
+/*
+ * usando CSS Modules
+* 
+ * Agora, vamos adicionar alguns estilos ao Layout componente. Para isso, usaremos CSS Modules , que permite importar arquivos CSS em um componente React.
+ * 
+ * Os módulos CSS permitem definir o escopo CSS localmente no nível do componente, criando automaticamente nomes de classe exclusivos. Isso permite que você use o mesmo nome de classe CSS em diferentes arquivos sem se preocupar com colisões de nomes de classe.
+*/
+
+
+.container {
+  max-width: 36rem;
+  padding: 0 1rem;
+  margin: 3rem auto 6rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.backToHome {
+  margin: 3rem 0 0;
+}
