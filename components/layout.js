@@ -1,9 +1,9 @@
-import Head from "next/head";
-import Image from "next/image";
+import Head from "next/head"; //componente embutido do next para metadados de uma pagina
+import Image from "next/image"; //componente embutido do next para imagens
 import styles from "./layout.module.css"; //para usar as declarações css declaradas no arquivo css, dentro deste componente temos que importar o arquivo CSS e atribuir um nome a ele
 //Usamos CSS Modules que permite importar aquivos CSS em um componente React
-import utilStyles from "../styles/utils.module.css";
-import Link from "next/link";
+import utilStyles from "../styles/utils.module.css"; //usar declarações css declaradas em outro modulo css
+import Link from "next/link"; //componente embutido do next para roteamento do lado do cliente
 
 const name = "Samuel Amaro";
 export const siteTitle = "Next.js Sample Website";
@@ -39,6 +39,9 @@ export default function Layout({ children, home }) {
       <header className={styles.header}>
         {home ? (
           <>
+            {/**
+             * atributo priority pre-carrega a imagem
+             */}
             <Image
               priority
               src="/images/profile.png"
@@ -51,6 +54,9 @@ export default function Layout({ children, home }) {
           </>
         ) : (
           <>
+            {/**
+             *  No Next.js, você pode usar o Link componente next/link para vincular as páginas do seu aplicativo. <Link> permite que você faça navegação do lado do cliente e aceita props que lhe dão melhor controle sobre o comportamento de navegação.
+             */}
             <Link href="/">
               <Image
                 priority

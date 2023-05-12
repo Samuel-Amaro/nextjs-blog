@@ -1,6 +1,10 @@
 This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 
-# Configurar um App Next.js
+# Blog App Simples
+
+Aprendendo os fundamentos do Next.js criando um aplicativo de blog muito simples.
+
+## Configurar um App Next.js
 
 Para criar um aplicativo Next.js
 
