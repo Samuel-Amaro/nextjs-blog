@@ -5,6 +5,7 @@ import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link"; //componente  embutido do next para Link
 import Date from "../components/date"; //componente formatador de Data
+import { GetStaticProps } from "next";
 
 /**
  * * PARTE 3 USANDO GERAÇÃO ESTATICA (getStaticProps)
@@ -20,7 +21,8 @@ import Date from "../components/date"; //componente formatador de Data
  * Uma das razões para essa restrição é que o React precisa ter todos os dados necessários antes que a página seja renderizada.
  * @returns
  */
-export async function getStaticProps() {
+
+export const getStaticProps: GetStaticProps = async () => {
   //buscando dados externos de db, api, file system, etc... para envia-los como props para a página
 
   const allPostsData = getSortedPostsData();
@@ -30,7 +32,7 @@ export async function getStaticProps() {
       allPostsData,
     },
   };
-}
+};
 
 /**
  * * PARTE 1 criando pagina
@@ -50,7 +52,15 @@ export async function getStaticProps() {
 
 //parte1: Page Home esta associada a root rota, a rota raiz, pagina inicial,
 //parte3: lemos a prop allPostsData para ler os dados necessarios para renderizamos a page Home
-export default function Home({ allPostsData }) {
+export default function Home({
+  allPostsData,
+}: {
+  allPostsData: {
+    date: string;
+    title: string;
+    id: string;
+  }[];
+}) {
   return (
     <Layout home>
       {/**

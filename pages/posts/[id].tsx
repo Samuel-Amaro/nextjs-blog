@@ -3,6 +3,7 @@ import Layout from "../../components/layout";
 import { getAllPostsIds, getPostData } from "../../lib/posts";
 import Head from "next/head"; //componente embutido do next para metadados da pagina
 import utilStyles from "../../styles/utils.module.css"; //estilos dos utils
+import { GetStaticPaths, GetStaticProps } from "next";
 
 /**
  * páginas que começam com [ e terminam com ] são rotas dinamicas em Next.js
@@ -25,32 +26,33 @@ import utilStyles from "../../styles/utils.module.css"; //estilos dos utils
  * e fornecido um params que contem o id
  * @returns
  */
-export async function getStaticProps({ params }) {
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   //buscando dados externos de db, api, file system, etc... para envia-los como props para a página
 
   //obtem dados de forma assincrona de uma postagem por meio de seu id e retorna como props para componente Post renderizar postagem
-  const postData = await getPostData(params.id);
+  const postData = await getPostData(params?.id as string);
   //Ao retornar postData para dentro do props objeto em getStaticProps, os dados da postagem do blog serão passadas para o Post componente como um prop
   return {
     props: {
       postData,
     },
   };
-}
+};
 
 /**
  * function assincrona chamada getStaticPaths
  *
  * @returns
  */
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   //paths contém a matriz de caminhos conhecidos retornados por getAllPostIds(), que incluem os parâmetros definidos por pages/posts/[id].js
   const paths = getAllPostsIds();
   return {
     paths,
     fallback: false,
   };
-}
+};
 
 /**
  * Em Next.js, uma página(page) é um React Component exportado de um arquivo no pages diretório
@@ -68,7 +70,15 @@ export async function getStaticPaths() {
  * lemos a prop PostsData para ler os dados necessarios para renderizamos a page Post
  * @returns
  */
-export default function Post({ postData }) {
+export default function Post({
+  postData,
+}: {
+  postData: {
+    title: string;
+    date: string;
+    contentHtml: string;
+  };
+}) {
   return (
     <Layout>
       {/**

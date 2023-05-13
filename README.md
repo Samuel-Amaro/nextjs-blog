@@ -29,3 +29,5 @@ npm run dev
 Isso inicia o "servidor de desenvolvimento" do aplicativo Next.js
 
 Abra `http://localhost:3000` no seu navegador.
+
+

@@ -1,3 +1,4 @@
+import { AppProps } from "next/app";
 import "../styles/global.css"; //importa o arquivo CSS dentro do pages/_app.js, e um css global afeta todas paginas, esse estilo serão aplicados globalmnete a todas as páginas do aplicativo
 //add um css global
 
@@ -7,6 +8,6 @@ import "../styles/global.css"; //importa o arquivo CSS dentro do pages/_app.js, 
  * @param {*} param0
  * @returns
  */
-export default function App({ Component, pageProps }) {
+export default function App({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />;
 }
