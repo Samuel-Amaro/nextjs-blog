@@ -4,7 +4,6 @@ import styles from "./layout.module.css"; //para usar as declarações css decla
 //Usamos CSS Modules que permite importar aquivos CSS em um componente React
 import utilStyles from "../styles/utils.module.css"; //usar declarações css declaradas em outro modulo css
 import Link from "next/link"; //componente embutido do next para roteamento do lado do cliente
-import React from "react";
 
 const name = "Samuel Amaro";
 export const siteTitle = "Next.js Sample Website";
